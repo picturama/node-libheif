@@ -1,0 +1,17 @@
+{
+  "name": "node-libheif",
+  "version": "1.9.1",
+  "main": "node-libheif.js",
+  "scripts": {
+    "clean": "rm -rf build",
+    "build": "node-gyp build",
+    "install": "node-gyp rebuild",
+    "test": "node ./test.js"
+  },
+  "dependencies": {
+    "nan": "^2.14.2"
+  },
+  "devDependencies": {
+    "node-gyp": "^7.1.2"
+  }
+}
