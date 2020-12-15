@@ -1,9 +1,24 @@
-let libheif
-
+let nativePart
 if (process.env.DEBUG) {
-    libheif = require('./build/Debug/node_libheif.node')
+    nativePart = require('./build/Debug/node_libheif.node')
 } else {
-    libheif = require('./build/Release/node_libheif.node')
+    nativePart = require('./build/Release/node_libheif.node')
 }
 
-module.exports = libheif
+
+function loadHeifFile(fileName) {
+    return new Promise(function(resolve, reject) {
+        nativePart.loadHeifFile(fileName, function(error, result) {
+            if (error) {
+                reject(new Error(error))
+            } else {
+                resolve(result)
+            }
+        })
+    })
+}
+
+
+module.exports = {
+    loadHeifFile
+}

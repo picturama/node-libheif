@@ -22,9 +22,9 @@ Install `node-libheif`:
 Decode a image:
 
 ```javascript
-import { loadHeifFromFile } from 'node-libheif'
+import { loadHeifFile } from 'node-libheif'
 
-const decodedImage = loadHeifFromFile('path/to/myimage.heic')
+const decodedImage = await loadHeifFile('path/to/myimage.heic')
 decodedImage.width   // Width in px
 decodedImage.height  // Height in px
 decodedImage.data    // Buffer with RGB data (8 bit per channel). size in bytes = 3 * width * height
