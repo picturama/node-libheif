@@ -7,4 +7,4 @@ export interface DecodedHeifImage {
     data: Buffer
 }
 
-export function loadHeifFile(fileName: string): Promise<DecodedHeifImage>
+export function decodeHeifFile(fileName: string): Promise<DecodedHeifImage>

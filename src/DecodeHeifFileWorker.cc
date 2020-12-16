@@ -1,12 +1,12 @@
-#include <LoadHeifFileWorker.h>
+#include <DecodeHeifFileWorker.h>
 #include "libheif/heif.h"
 
-LoadHeifFileWorker::LoadHeifFileWorker(std::string fileName, Function &callback) :
+DecodeHeifFileWorker::DecodeHeifFileWorker(std::string fileName, Function &callback) :
     AsyncWorker(callback), fileName(fileName)
 {
 }
 
-void LoadHeifFileWorker::Execute() {
+void DecodeHeifFileWorker::Execute() {
     //printf("## fileName: %s\n", fileName.c_str());
 
     heif_context* ctx = heif_context_alloc();
@@ -34,7 +34,7 @@ void LoadHeifFileWorker::Execute() {
     //printf("## stride: %d, width: %d, height: %d, len: %d\n", stride, resultWidth, resultHeight, resultDataLength);
 }
 
-void LoadHeifFileWorker::OnOK() {
+void DecodeHeifFileWorker::OnOK() {
     Object result = Object::New(Env());
     result.Set("width", resultWidth);
     result.Set("height", resultHeight);

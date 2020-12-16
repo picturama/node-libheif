@@ -2,10 +2,10 @@
 
 using namespace Napi;
 
-class LoadHeifFileWorker : public AsyncWorker
+class DecodeHeifFileWorker : public AsyncWorker
 {
     public:
-        LoadHeifFileWorker(std::string fileName, Function &callback);
+        DecodeHeifFileWorker(std::string fileName, Function &callback);
 
         void Execute();
 

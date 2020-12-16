@@ -71,7 +71,7 @@
       'submodules/libheif/libheif/heif_decoder_libde265.cc',
 
       # Our main file
-      'src/LoadHeifFileWorker.cc',
+      'src/DecodeHeifFileWorker.cc',
       'src/node_libheif.cc'
     ],
     'cflags!' : [ '-fno-exceptions' ],

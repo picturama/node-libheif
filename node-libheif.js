@@ -1,9 +1,9 @@
 const nativePart = require('bindings')('node_libheif.node')
 
 
-function loadHeifFile(fileName) {
+function decodeHeifFile(fileName) {
     return new Promise(function(resolve, reject) {
-        nativePart.loadHeifFile(fileName, function(error, result) {
+        nativePart.decodeHeifFile(fileName, function(error, result) {
             if (error) {
                 reject(new Error(error))
             } else {
@@ -15,5 +15,5 @@ function loadHeifFile(fileName) {
 
 
 module.exports = {
-    loadHeifFile
+    decodeHeifFile
 }
