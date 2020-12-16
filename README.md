@@ -1,7 +1,7 @@
 node-libheif
 ============
 
-Native node bindings for [libheif](https://github.com/strukturag/libheif) - a HEIF image decoder.
+Native node bindings for [libheif](https://github.com/strukturag/libheif) - a HEIC/HEIF image decoder.
 
 There are JavaScript-only builds of `libheif` - like [libheif-js](https://www.npmjs.com/package/libheif-js) or
 [heic2any](https://github.com/alexcorvi/heic2any).
@@ -19,7 +19,7 @@ Install `node-libheif`:
 
     npm i --save node-libheif
 
-Decode a image:
+Decode a HEIC/HEIF file:
 
 ```javascript
 import { decodeHeifFile } from 'node-libheif'
@@ -28,4 +28,15 @@ const decodedImage = await decodeHeifFile('path/to/myimage.heic')
 decodedImage.width   // Width in px
 decodedImage.height  // Height in px
 decodedImage.data    // Buffer with RGB data (8 bit per channel). size in bytes = 3 * width * height
+```
+
+Decode a HEIC/HEIF buffer:
+
+```javascript
+import { promises as fs } from 'fs'
+import { decodeHeifFile } from 'node-libheif'
+
+const imageBuffer = await fs.readFile('path/to/myimage.heic')
+const decodedImage = await decodeHeifBuffer(imageBuffer)
+// decodedImage is the same as above
 ```

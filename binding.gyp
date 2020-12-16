@@ -72,6 +72,7 @@
 
       # Our main file
       'src/DecodeHeifFileWorker.cc',
+      'src/DecodeHeifBufferWorker.cc',
       'src/node_libheif.cc'
     ],
     'cflags!' : [ '-fno-exceptions' ],

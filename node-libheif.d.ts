@@ -8,3 +8,5 @@ export interface DecodedHeifImage {
 }
 
 export function decodeHeifFile(fileName: string): Promise<DecodedHeifImage>
+
+export function decodeHeifBuffer(buffer: Buffer): Promise<DecodedHeifImage>
