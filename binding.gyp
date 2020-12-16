@@ -6,14 +6,15 @@
       'HAVE_LIBDE265',
     ],
     'include_dirs' : [
+      'src/',
       'submodules/libheif/',
       'submodules/libde265/',
-      '<!(node -e "require(\'nan\')")'
+      '<!@(node -p "require(\'node-addon-api\').include")'
+    ],
+    'dependencies': [
+      '<!(node -p "require(\'node-addon-api\').gyp")'
     ],
     'sources': [
-      # First try:
-      #'<!@(node -p "var path=\'submodules/libheif/libheif/\';require(\'fs\').readdirSync(path).filter(f=>f.endsWith(\'.cc\') && !f.startsWith(\'heif_encoder\')).map(f=>path+f).join(\' \')")',
-
       # See `libde265_sources` in `submodules/libde265/libde265/CMakeLists.txt`
       'submodules/libde265/libde265/alloc_pool.cc',
       'submodules/libde265/libde265/bitstream.cc',
@@ -70,17 +71,14 @@
       'submodules/libheif/libheif/heif_decoder_libde265.cc',
 
       # Our main file
-      'node_libheif.cc'
+      'src/LoadHeifFileWorker.cc',
+      'src/node_libheif.cc'
     ],
     'cflags!' : [ '-fno-exceptions' ],
     'cflags_cc!': [ '-fno-rtti', '-fno-exceptions' ],
-    'conditions': [
-      ['OS=="mac"', {
-        'xcode_settings': {
-          'GCC_ENABLE_CPP_RTTI': 'YES',
-          'GCC_ENABLE_CPP_EXCEPTIONS': 'YES'
-        }
-      }]
-    ]
+    'xcode_settings': {
+      'GCC_ENABLE_CPP_RTTI': 'YES',
+      'GCC_ENABLE_CPP_EXCEPTIONS': 'YES'
+    }
   }]
 }

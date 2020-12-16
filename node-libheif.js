@@ -1,9 +1,4 @@
-let nativePart
-if (process.env.DEBUG) {
-    nativePart = require('./build/Debug/node_libheif.node')
-} else {
-    nativePart = require('./build/Release/node_libheif.node')
-}
+const nativePart = require('bindings')('node_libheif.node')
 
 
 function loadHeifFile(fileName) {

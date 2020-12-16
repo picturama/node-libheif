@@ -1,17 +1,16 @@
 {
   "name": "node-libheif",
   "version": "1.9.1",
+  "description": "Native node bindings for libheif - a HEIF image decoder",
+  "license": "MIT",
   "main": "node-libheif.js",
   "scripts": {
     "clean": "rm -rf build",
-    "build": "node-gyp build",
-    "install": "node-gyp rebuild",
     "test": "node ./test.js"
   },
+  "gypfile": true,
   "dependencies": {
-    "nan": "^2.14.2"
-  },
-  "devDependencies": {
-    "node-gyp": "^7.1.2"
+    "bindings": "^1.5.0",
+    "node-addon-api": "^3.0.2"
   }
 }
