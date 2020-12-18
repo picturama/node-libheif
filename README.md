@@ -22,21 +22,21 @@ Install `node-libheif`:
 Decode a HEIC/HEIF file:
 
 ```javascript
-import { decodeHeifFile } from 'node-libheif'
-
-const decodedImage = await decodeHeifFile('path/to/myimage.heic')
-decodedImage.width   // Width in px
-decodedImage.height  // Height in px
-decodedImage.data    // Buffer with RGB data (8 bit per channel). size in bytes = 3 * width * height
-```
-
-Decode a HEIC/HEIF buffer:
-
-```javascript
 import { promises as fs } from 'fs'
 import { decodeHeifFile } from 'node-libheif'
 
 const imageBuffer = await fs.readFile('path/to/myimage.heic')
 const decodedImage = await decodeHeifBuffer(imageBuffer)
-// decodedImage is the same as above
+decodedImage.width   // Width in px
+decodedImage.height  // Height in px
+decodedImage.data    // Buffer with RGB data (8 bit per channel). size in bytes = 3 * width * height
 ```
+
+
+Development
+-----------
+
+    git clone https://github.com/picturama/node-libheif.git
+    cd node-libheif
+    git submodule update --init
+    npm i

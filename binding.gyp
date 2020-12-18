@@ -71,7 +71,6 @@
       'submodules/libheif/libheif/heif_decoder_libde265.cc',
 
       # Our main file
-      'src/DecodeHeifFileWorker.cc',
       'src/DecodeHeifBufferWorker.cc',
       'src/node_libheif.cc'
     ],
