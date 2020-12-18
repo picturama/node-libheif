@@ -22,9 +22,9 @@ class DecodeHeifBufferWorker : public AsyncWorker
         heif_image_handle* imageHandle;
         heif_image* image;
 
+        int resultStride;
         int resultWidth;
         int resultHeight;
-        size_t resultDataLength;
         const uint8_t* resultData;
 
 };
