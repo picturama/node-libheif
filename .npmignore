@@ -1,5 +1,0 @@
-/build
-
-/submodules/**
-!/submodules/libde265/libde265/**
-!/submodules/libheif/libheif/**
