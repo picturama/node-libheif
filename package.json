@@ -2,6 +2,7 @@
   "name": "node-libheif",
   "version": "1.9.1",
   "description": "Native node bindings for libheif - a HEIF image decoder",
+  "os": [ "darwin", "linux" ],
   "license": "MIT",
   "main": "node-libheif.js",
   "scripts": {
