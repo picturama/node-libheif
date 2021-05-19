@@ -24,6 +24,7 @@
 #include "libde265/util.h"
 #include <assert.h>
 #include <stdio.h>
+#include <stdint.h>
 
 #define DEBUG_MEMORY 1
 
