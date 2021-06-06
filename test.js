@@ -3,10 +3,10 @@ const fs = require('fs').promises
 const libheif = require('./node-libheif')
 
 
-const testImagePath = '../picturama/submodules/test-data/photos/heic/Apple_iPhone_XR_portrait.HEIC';
+const testImagePath = '../picturama/submodules/test-data/photos/heic/Apple_iPhone_XR_portrait.HEIC'
 
 
-(async () => {
+;(async () => {
     try {
         await testDecodeHeifBuffer()
     } catch (error) {

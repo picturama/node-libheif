@@ -38,7 +38,16 @@ decodedImage.data    // Buffer with RGB data (8 bit per channel). size in bytes 
 Development
 -----------
 
+Clone repo:
+
     git clone https://github.com/picturama/node-libheif.git
     cd node-libheif
     git submodule update --init
+
+Build:
+
     npm i
+
+Run test (after adjusting `testImagePath` in `test.ts`):
+
+    node test.js
