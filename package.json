@@ -1,8 +1,11 @@
 {
   "name": "node-libheif",
-  "version": "1.9.1-rc.1",
+  "version": "1.12.0-rc.1",
   "description": "Native node bindings for libheif - a HEIF image decoder",
-  "os": [ "darwin", "linux" ],
+  "os": [
+    "darwin",
+    "linux"
+  ],
   "license": "MIT",
   "repository": "github:picturama/node-libheif",
   "main": "node-libheif.js",
