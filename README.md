@@ -3,6 +3,8 @@ node-libheif
 
 Native node bindings for [libheif](https://github.com/strukturag/libheif) - a HEIC/HEIF image decoder.
 
+[![npm version](https://img.shields.io/npm/v/node-libheif.svg?style=flat-square)](https://www.npmjs.com/package/node-libheif)
+
 There are JavaScript-only builds of `libheif` - like [libheif-js](https://www.npmjs.com/package/libheif-js) or
 [heic2any](https://github.com/alexcorvi/heic2any).
 
