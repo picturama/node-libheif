@@ -4,6 +4,8 @@
     'defines': [
       'HAVE_POSIX_MEMALIGN',
       'HAVE_LIBDE265',
+      'HAVE_STDINT_H',
+      'HAVE_CSTDINT',
     ],
     'include_dirs' : [
       'src/',
